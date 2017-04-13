@@ -1,4 +1,4 @@
-package in.devesjgupta.tutorials.designpatterns.creational.singleton;
+package in.deveshgupta.tutorials.designpatterns.creational.singleton;
 
 public class SimpleSingleton {
 

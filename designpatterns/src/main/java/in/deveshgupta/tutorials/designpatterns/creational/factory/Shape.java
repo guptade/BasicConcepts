@@ -1,4 +1,4 @@
-package in.devesjgupta.tutorials.designpatterns.creational.factory;
+package in.deveshgupta.tutorials.designpatterns.creational.factory;
 
 public interface Shape {
 	public default void draw() {
