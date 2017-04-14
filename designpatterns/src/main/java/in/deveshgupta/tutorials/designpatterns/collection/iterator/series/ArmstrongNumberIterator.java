@@ -35,8 +35,8 @@ public class ArmstrongNumberIterator implements Iterator<Long> {
 
 	public static boolean isArmstrongNumber(long n) {
 		long d;
-		int l = (int) Math.log10(n) + 1;
 		long sum = 0;
+		int l = (int) Math.log10(n) + 1;
 		while (n > 0) {
 			d = n % 10;
 			sum = sum + (long) Math.pow(d, l);
