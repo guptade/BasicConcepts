@@ -2,24 +2,23 @@ package in.deveshgupta.tutorials.designpatterns.creational.singleton;
 
 public class LazySingleton {
 
-	private static LazySingleton INSTANCE;
+  private static LazySingleton INSTANCE;
 
-	public static LazySingleton getINSTANCE() {
-		if (INSTANCE == null) {
-			synchronized (LazySingleton.class) {
-				if (INSTANCE == null) {
-					INSTANCE = new LazySingleton();
-				}
-			}
-		}
-		return INSTANCE;
-	}
+  public static LazySingleton getINSTANCE() {
+    if (INSTANCE == null) {
+      synchronized (LazySingleton.class) {
+        if (INSTANCE == null) {
+          INSTANCE = new LazySingleton();
+        }
+      }
+    }
+    return INSTANCE;
+  }
 
-	private LazySingleton() {
-	}
+  private LazySingleton() {}
 
-	protected Object readResolve() {
-		return INSTANCE;
-	}
+  protected Object readResolve() {
+    return INSTANCE;
+  }
 
 }

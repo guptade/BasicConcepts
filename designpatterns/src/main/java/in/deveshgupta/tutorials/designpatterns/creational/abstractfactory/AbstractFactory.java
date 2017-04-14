@@ -5,8 +5,8 @@ import in.deveshgupta.tutorials.designpatterns.creational.factory2.Color;
 
 public abstract class AbstractFactory {
 
-	public abstract Color getColor(String name);
+  public abstract Color getColor(String name);
 
-	public abstract Shape getShape(String name);
+  public abstract Shape getShape(String name);
 
 }

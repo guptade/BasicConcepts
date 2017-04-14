@@ -4,44 +4,45 @@ import java.util.Iterator;
 
 public class ArmstrongNumberIterator implements Iterator<Long> {
 
-	private long exclusive;
-	private long number;
+  public static boolean isArmstrongNumber(long n) {
+    long d;
+    long sum = 0;
+    int l = (int) Math.log10(n) + 1;
+    while (n > 0) {
+      d = n % 10;
+      sum = sum + (long) Math.pow(d, l);
+      n = n / 10;
+    }
+    return sum == n;
+  }
 
-	public ArmstrongNumberIterator(long exclusive) {
-		this(0, exclusive);
-	}
+  private long exclusive;
 
-	public ArmstrongNumberIterator(long inclusive, long exclusive) {
-		assert exclusive > inclusive && inclusive > 0;
-		this.number = inclusive;
-		this.exclusive = exclusive;
-	}
+  private long number;
 
-	@Override
-	public boolean hasNext() {
-		while (number < exclusive) {
-			if (isArmstrongNumber(number)) {
-				return true;
-			}
-			number++;
-		}
-		return false;
-	}
+  public ArmstrongNumberIterator(long exclusive) {
+    this(0, exclusive);
+  }
 
-	@Override
-	public Long next() {
-		return number++;
-	}
+  public ArmstrongNumberIterator(long inclusive, long exclusive) {
+    assert exclusive > inclusive && inclusive > 0;
+    number = inclusive;
+    this.exclusive = exclusive;
+  }
 
-	public static boolean isArmstrongNumber(long n) {
-		long d;
-		long sum = 0;
-		int l = (int) Math.log10(n) + 1;
-		while (n > 0) {
-			d = n % 10;
-			sum = sum + (long) Math.pow(d, l);
-			n = n / 10;
-		}
-		return sum == n;
-	}
+  @Override
+  public boolean hasNext() {
+    while (number < exclusive) {
+      if (isArmstrongNumber(number)) {
+        return true;
+      }
+      number++;
+    }
+    return false;
+  }
+
+  @Override
+  public Long next() {
+    return number++;
+  }
 }

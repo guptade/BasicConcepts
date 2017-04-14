@@ -5,21 +5,21 @@ import java.util.List;
 
 public class Customer implements IVisitable {
 
-	private List<Order> orders;
+  private List<Order> orders;
 
-	public Customer() {
-		orders = new ArrayList<>();
-	}
+  public Customer() {
+    orders = new ArrayList<>();
+  }
 
-	@Override
-	public void accept(IVisitor visitor) {
-		visitor.visit(this);
-		for (Order order : orders) {
-			order.accept(visitor);
-		}
-	}
+  @Override
+  public void accept(IVisitor visitor) {
+    visitor.visit(this);
+    for (Order order : orders) {
+      order.accept(visitor);
+    }
+  }
 
-	public List<Order> getOrders() {
-		return orders;
-	}
+  public List<Order> getOrders() {
+    return orders;
+  }
 }

@@ -1,15 +1,18 @@
 package in.deveshgupta.tutorials.designpatterns.creational.builder;
 
 class HawaiianPizzaBuilder extends PizzaBuilder {
-	public void buildDough() {
-		pizza.setDough("cross");
-	}
+  @Override
+  public void buildDough() {
+    pizza.setDough("cross");
+  }
 
-	public void buildSauce() {
-		pizza.setSauce("mild");
-	}
+  @Override
+  public void buildSauce() {
+    pizza.setSauce("mild");
+  }
 
-	public void buildTopping() {
-		pizza.setTopping("ham+pineapple");
-	}
+  @Override
+  public void buildTopping() {
+    pizza.setTopping("ham+pineapple");
+  }
 }

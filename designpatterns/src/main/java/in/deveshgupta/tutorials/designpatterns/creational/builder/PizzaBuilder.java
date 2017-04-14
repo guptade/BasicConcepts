@@ -1,20 +1,20 @@
 package in.deveshgupta.tutorials.designpatterns.creational.builder;
 
 abstract class PizzaBuilder {
-	
-	protected Pizza pizza;
 
-	public Pizza getPizza() {
-		return pizza;
-	}
+  protected Pizza pizza;
 
-	public void createNewPizzaProduct() {
-		pizza = new Pizza();
-	}
+  public abstract void buildDough();
 
-	public abstract void buildDough();
+  public abstract void buildSauce();
 
-	public abstract void buildSauce();
+  public abstract void buildTopping();
 
-	public abstract void buildTopping();
+  public void createNewPizzaProduct() {
+    pizza = new Pizza();
+  }
+
+  public Pizza getPizza() {
+    return pizza;
+  }
 }

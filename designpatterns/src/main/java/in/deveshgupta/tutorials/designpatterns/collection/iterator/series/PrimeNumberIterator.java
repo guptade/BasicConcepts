@@ -4,46 +4,47 @@ import java.util.Iterator;
 
 public class PrimeNumberIterator implements Iterator<Long> {
 
-	private long exclusive;
-	private long number;
+  private static boolean isFactor(long factor, long number) {
+    return number % factor == 0;
+  }
 
-	public PrimeNumberIterator(long exclusive) {
-		this(0, exclusive);
-	}
+  private static boolean isPrime(long n) {
+    for (long f = 2; f < n; f++) {
+      if (isFactor(f, n)) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-	public PrimeNumberIterator(long inclusive, long exclusive) {
-		assert exclusive > inclusive && inclusive > 0;
-		this.exclusive = exclusive;
-		this.number = inclusive;
-	}
+  private long exclusive;
 
-	@Override
-	public boolean hasNext() {
-		while (number < exclusive) {
-			if (isPrime(number)) {
-				return true;
-			}
-			number++;
-		}
-		return false;
-	}
+  private long number;
 
-	@Override
-	public Long next() {
-		return number++;
-	}
+  public PrimeNumberIterator(long exclusive) {
+    this(0, exclusive);
+  }
 
-	private static boolean isPrime(long n) {
-		for (long f = 2; f < n; f++) {
-			if (isFactor(f, n)) {
-				return false;
-			}
-		}
-		return true;
-	}
+  public PrimeNumberIterator(long inclusive, long exclusive) {
+    assert exclusive > inclusive && inclusive > 0;
+    this.exclusive = exclusive;
+    number = inclusive;
+  }
 
-	private static boolean isFactor(long factor, long number) {
-		return number % factor == 0;
-	}
+  @Override
+  public boolean hasNext() {
+    while (number < exclusive) {
+      if (isPrime(number)) {
+        return true;
+      }
+      number++;
+    }
+    return false;
+  }
+
+  @Override
+  public Long next() {
+    return number++;
+  }
 
 }

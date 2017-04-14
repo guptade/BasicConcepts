@@ -1,15 +1,18 @@
 package in.deveshgupta.tutorials.designpatterns.creational.builder;
 
 class SpicyPizzaBuilder extends PizzaBuilder {
-	public void buildDough() {
-		pizza.setDough("pan baked");
-	}
+  @Override
+  public void buildDough() {
+    pizza.setDough("pan baked");
+  }
 
-	public void buildSauce() {
-		pizza.setSauce("hot");
-	}
+  @Override
+  public void buildSauce() {
+    pizza.setSauce("hot");
+  }
 
-	public void buildTopping() {
-		pizza.setTopping("pepperoni+salami");
-	}
+  @Override
+  public void buildTopping() {
+    pizza.setTopping("pepperoni+salami");
+  }
 }
