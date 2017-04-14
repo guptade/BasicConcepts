@@ -1,4 +1,4 @@
-package in.deveshgupta.tutorials.designpatterns.collection.iterator;
+package in.deveshgupta.tutorials.designpatterns.collection.iterator.series;
 
 import java.util.Iterator;
 
@@ -42,9 +42,6 @@ public class ArmstrongNumberIterator implements Iterator<Long> {
 			sum = sum + (long) Math.pow(d, l);
 			n = n / 10;
 		}
-		if (sum == n) {
-			return true;
-		}
-		return false;
+		return sum == n;
 	}
 }

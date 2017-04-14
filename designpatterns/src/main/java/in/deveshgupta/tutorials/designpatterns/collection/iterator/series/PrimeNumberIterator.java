@@ -1,4 +1,4 @@
-package in.deveshgupta.tutorials.designpatterns.collection.iterator;
+package in.deveshgupta.tutorials.designpatterns.collection.iterator.series;
 
 import java.util.Iterator;
 
